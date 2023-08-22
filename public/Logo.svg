@@ -1,0 +1,40 @@
+<svg viewBox="193.8 176.8 312.4 346.4" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="271.91" y1="435.94" x2="271.91" y2="176.84">
+      <stop offset="0" stop-color="#f14e25"/>
+      <stop offset=".37" stop-color="#f9972e"/>
+      <stop offset=".76" stop-color="#005fff"/>
+    </linearGradient>
+    <path fill="url(#SVGID_1_)" d="M350 176.8 193.8 435.9l80.8-32 75.4-125z"/>
+    <linearGradient id="SVGID_2" gradientUnits="userSpaceOnUse" x1="312.28" y1="445.46" x2="312.28" y2="278.9">
+      <stop offset=".08" stop-color="#ee4123"/>
+      <stop offset=".48" stop-color="#fdd54a"/>
+      <stop offset=".8" stop-color="#e1e18b"/>
+      <stop offset="1" stop-color="#b0f6ff"/>
+    </linearGradient>
+    <path fill="url(#SVGID_2)" d="m350 278.9-75.4 125 75.4 41.6z"/>
+    <linearGradient id="SVGID_3" gradientUnits="userSpaceOnUse" x1="271.9" y1="523.16" x2="271.9" y2="403.89">
+      <stop offset="0" stop-color="#e00f13"/>
+      <stop offset=".87" stop-color="#ed3d1c"/>
+    </linearGradient>
+    <path fill="url(#SVGID_3)" d="m274.6 403.9-80.8 32L350 523.2v-77.7z"/>
+    <linearGradient id="SVGID_4" gradientUnits="userSpaceOnUse" x1="-556.25" y1="435.94" x2="-556.25" y2="176.84" gradientTransform="matrix(-1 0 0 1 -128.16 0)">
+      <stop offset="0" stop-color="#f9944d"/>
+      <stop offset=".28" stop-color="#fcce59"/>
+      <stop offset=".56" stop-color="#d3d5cd"/>
+      <stop offset=".89" stop-color="#00c9ff"/>
+    </linearGradient>
+    <path fill="url(#SVGID_4)" d="m350 176.8 156.2 259.1-80.8-32-75.4-125z"/>
+    <linearGradient id="SVGID_5" gradientUnits="userSpaceOnUse" x1="-515.87" y1="445.46" x2="-515.87" y2="278.9" gradientTransform="matrix(-1 0 0 1 -128.16 0)">
+      <stop offset=".04" stop-color="#f9844a"/>
+      <stop offset=".3" stop-color="#fcdb72"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <path fill="url(#SVGID_5)" d="m350 278.9 75.4 125-75.4 41.6z"/>
+    <linearGradient id="SVGID_6" gradientUnits="userSpaceOnUse" x1="-556.25" y1="523.16" x2="-556.25" y2="403.89" gradientTransform="matrix(-1 0 0 1 -128.16 0)">
+      <stop offset=".22" stop-color="#f41d25"/>
+      <stop offset="1" stop-color="#faa138"/>
+    </linearGradient>
+    <path fill="url(#SVGID_6)" d="m425.4 403.9 80.8 32L350 523.2v-77.7z"/>
+  </g>
+</svg>

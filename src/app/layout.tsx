@@ -1,6 +1,11 @@
+import Wrapper from '@/components/shared/Wrapper'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Navbar from '@/components/views/Navbar'
+import Footer from '@/components/views/Footter'
+
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +21,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+     
+      {/* <body className="backdrop-blur-lg bg-gray-100 z-50"> */}
+       
+          <body className=" bg-white z-50 backdrop-blur-sm">
+            <Navbar/>
+        <Wrapper>
+          {children}
+         </Wrapper>
+         <Footer/>
+          
+         
+        </body>
     </html>
   )
 }
