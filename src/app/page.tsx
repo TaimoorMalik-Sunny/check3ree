@@ -1,5 +1,6 @@
 'use client'
 import Hero from '@/components/views/Hero'
+import HeroTesting from '@/components/views/HeroTesting'
 import Mainbody from '@/components/views/MainBody'
 import { motion } from 'framer-motion'
 
@@ -15,10 +16,10 @@ export default function Home() {
       transition={{ duration: 1, ease: 'easeInOut' }}
     >
       {/* <GridMainBody/> */}
-      
+      <HeroTesting/>
      
-    <Hero/>
-    <Mainbody/>
+    {/* <Hero/> */}
+    {/* <Mainbody/> */}
      </motion.div> 
    
    </div>
