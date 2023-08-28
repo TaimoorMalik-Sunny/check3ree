@@ -37,6 +37,7 @@ import { NavbarArray, NavbarItemtypes } from '@/components/utils/NavbarArrayAndT
               </li>))}
               </ul>
               </div>
+             
         
               <div className="hidden lg:flex items-center">
                  <p className="bg-white text-black rounded-full border text-center w-8 h-8 px-2 py-2 mr-8 ">?</p>
@@ -90,13 +91,7 @@ import { NavbarArray, NavbarItemtypes } from '@/components/utils/NavbarArrayAndT
     //         </li>))}
     //     </ul>
     //     {/* rounded-l-full
-    //     <div className="border flex items-center text-gray-600 px-3 rounded-md " >
-    //       <BiSearch />
-    //       <input 
-    //       type="text" 
-    //       className=" focus:outline-none pl-1 pr-5 py-1 w-72"
-    //       placeholder="Search in our store "/>
-    //     </div> */}
+    //      */}
        
     //     {/* <div className=" flex-shrink-0 relative w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center">
     //       <div className="absolute right-2 flex items-center justify-center top-1 w-3 h-3 rounded-full bg-red-400 text-xs font-light">

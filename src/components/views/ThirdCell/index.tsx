@@ -17,7 +17,7 @@ export const ThirdCell = () => {
        
         <CardGridCell3/>
          <CardGridCell3/>
-           <div className="animate-pulse duration-200 p-5 border rounded-lg bg-white mt-2 ml-2 mr-2 mb-4 py-10">
+           <div className="animate-pulse duration-400 p-5 border rounded-lg bg-white mt-2 ml-2 mr-2 mb-4 py-10">
             <p className="">You don't use this protocol</p>
         </div>
       

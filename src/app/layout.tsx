@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" >
      
       {/* <body className="backdrop-blur-lg bg-gray-100 z-50"> */}
        

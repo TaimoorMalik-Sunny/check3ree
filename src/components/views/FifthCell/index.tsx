@@ -12,7 +12,7 @@ export const FirstCell = () => {
         </div>
        
         
-           <div className="animate-pulse duration-200 p-5 border bg-white mt-2 ml-2 mr-2 mb-4">
+           <div className="animate-pulse duration-400 p-5 border bg-white mt-2 ml-2 mr-2 mb-4">
             <p className=" text-gray-400 ">You don't have any Borrows</p>
         </div>
       

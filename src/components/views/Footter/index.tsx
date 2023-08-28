@@ -7,9 +7,9 @@ import bandwlogo from '../../../../public/blackwhitelogo.png'
  const Footer = () => {
   return (
     <div>
-         <div className="flex justify-between items-center m-1 px-2 py-3 border-2  border-t-white">
+         <div className="flex flex-wrap md:flex justify-between items-center m-1 px-2 py-3 border-2  border-t-white">
            {/* for icons */}
-            <div className="flex p-5 gap-4">
+            <div className="flex flex-wrap p-5 gap-4">
                 <BsTwitter size={25}/>
                 <BiLogoDiscordAlt size={25}/>
                 <Image src={bandwlogo} width={25} height={25} alt="logo"/>
@@ -17,7 +17,7 @@ import bandwlogo from '../../../../public/blackwhitelogo.png'
 
             </div>
             {/* for text  */}
-            <div className="flex gap-5">
+            <div className="flex flex-wrap justify-center items-center lg:flex gap-5">
             <p className="text-gray-500 hover:text-gray-950 underline animate-pulse duration-300">Terms & Conditions</p>
             <p className="text-gray-500 hover:text-gray-950 underline animate-pulse duration-300">Privacy Policy</p>
             <p className="text-gray-500 hover:text-gray-950 underline animate-pulse duration-300">FAQ</p>
