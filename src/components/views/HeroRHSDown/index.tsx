@@ -18,37 +18,42 @@ import {
   TabsTrigger,
 } from "@/components/ui/tabs"
 import CardGridCell3 from '@/components/shared/CardGridCell3'
+import aavelogo from '../../../../public/aavelogo.png'
+import bendao from '../../../../public/benddao.jpeg'
+import blend from '../../../../public/blend.webp'
+import nftfi from '../../../../public/nftfi.png'
 
 export const HeroRHSDown = () => {
   return (
     
-    <Tabs defaultValue="Balances" className="w-[500px]">
-    <TabsList className="grid w-full grid-cols-3">
-      <TabsTrigger value="Balances">Balances</TabsTrigger>
-      <TabsTrigger value="LiquidityPools">Liquidity Pools</TabsTrigger>
-      <TabsTrigger value="NFTs">NFTs</TabsTrigger>
+    <Tabs defaultValue="crypto coins" className=" w-full ">
+    <TabsList className="grid w-full grid-cols-2">
+    <TabsTrigger value="NFTs">NFTs</TabsTrigger>
+      <TabsTrigger value="crypto coins">Crypto Coins</TabsTrigger>
+      {/* <TabsTrigger value="LiquidityPools">Liquidity Pools</TabsTrigger> */}
+    
     </TabsList>
-    <TabsContent value="Balances">
+    <TabsContent value="crypto coins">
       <Card>
-        <CardHeader className="flex flex-row justify-between">
-          <CardTitle>Balances</CardTitle>
+        {/* <CardHeader className="flex flex-row justify-between">
+          <CardTitle>Crypto Coins</CardTitle>
           <CardDescription>
             Total: $155.98
           </CardDescription>
          
-        </CardHeader>
+        </CardHeader> */}
         <CardContent className="space-y-2">
           <div className="space-y-1">
-          <CardGridCell3/>
+          <CardGridCell3  image={aavelogo}  title={"Aave"} value={"$300"}/>
           </div>
           <div className="space-y-1">
-          <CardGridCell3/>
+          <CardGridCell3  image={bendao}  title={"bendao"} value={"$200"}/>
           </div>
         </CardContent>
        
       </Card>
     </TabsContent>
-    <TabsContent value="LiquidityPools">
+    {/* <TabsContent value="LiquidityPools">
       <Card>
         <CardHeader>
           <CardTitle>Liquidity Pools</CardTitle>
@@ -70,30 +75,26 @@ export const HeroRHSDown = () => {
           <Button>Save password</Button>
         </CardFooter>
       </Card>
-    </TabsContent>
+    </TabsContent> */}
     <TabsContent value="NFTs">
       <Card>
-        <CardHeader className="flex flex-row justify-between">
+        {/* <CardHeader className="flex flex-row justify-between">
             
           <CardTitle>NFTs Collection</CardTitle>
           <CardDescription>
             Total: 1NFT
           </CardDescription>
          
-        </CardHeader>
+        </CardHeader> */}
         <CardContent className="space-y-2">
           <div className="space-y-1">
-            <Label htmlFor="current">Current password</Label>
-            <Input id="current" type="password" />
+          <CardGridCell3 image={blend}  title={"blend"} value={"$100"}/>
           </div>
           <div className="space-y-1">
-            <Label htmlFor="new">New password</Label>
-            <Input id="new" type="password" />
+          <CardGridCell3 image={nftfi}  title={"NFTFI"} value={"$300"}/>
           </div>
         </CardContent>
-        <CardFooter>
-          <Button>Save password</Button>
-        </CardFooter>
+      
       </Card>
     </TabsContent>
   </Tabs>

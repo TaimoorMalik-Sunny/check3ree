@@ -18,11 +18,11 @@ import { NavbarArray, NavbarItemtypes } from '@/components/utils/NavbarArrayAndT
   return (
 
         
-          <div className="flex justify-between items-center m-2 px-2 py-3  ">
-              <div className=" flex ">
-               <Image width={30} height={30} src={"/Logo.svg"} alt="logo" />
+          <div className="   border-b-2 border-white flex justify-between items-center m-2 px-2 py-0  ">
+              <div className=" flex items-center">
+               <Image width={100} height={40} src={"/logo.png"} alt="logo" />
               <div className="flex-col">
-              <p className="mt-3 mx-4">Spectral</p>
+              <p className="mt-3 mx-4">VERAFI</p>
               <p className=" text-end text-xs">Beta V0.3.0</p></div>
               </div>
               <div className="hidden lg:flex justify-between items-center grow-0 ">
@@ -37,14 +37,19 @@ import { NavbarArray, NavbarItemtypes } from '@/components/utils/NavbarArrayAndT
               </li>))}
               </ul>
               </div>
-             
-        
               <div className="hidden lg:flex items-center">
+                 
+                 
+                  <button className="bg-blue-500 text-white rounded-lg  px-8 py-2">Connect Wallet</button>
+                 
+              </div>
+        
+              {/* <div className="hidden lg:flex items-center">
                  <p className="bg-white text-black rounded-full border text-center w-8 h-8 px-2 py-2 mr-8 ">?</p>
                  <div className="  rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-0.5 hover:p-1">
-                  <button className="bg-black text-white rounded-full  px-8 py-2">Connect Wallet</button>
+                  <button className="bg-blue-500 text-white rounded-full  px-8 py-2">Connect Wallet</button>
                   </div>
-              </div>
+              </div> */}
 
 
      {/* <div onClick={()=>setNavbarOpen(!isNavbarOpen)}>

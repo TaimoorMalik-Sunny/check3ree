@@ -1,5 +1,8 @@
 import React  from 'react'
 import aavelogo from '../../../../public/aavelogo.png'
+import benddao from '../../../../public/benddao.jpeg'
+import blend from '../../../../public/blend.webp'
+import nftfi from '../../../../public/nftfi.png'
 import Image from 'next/image'
 
  // Import Swiper React components
@@ -10,18 +13,22 @@ import SwiperCore from 'swiper'
 import 'swiper/css';
  
 
+ 
+
 
 
  const HeroRHS = () => {
 
+ 
+
   SwiperCore.use([]);
   return (
-    <div>
-      <div className=" w-full  animate-pulse duration-400 flex justify-between ml-1 h-28 border-2 border-white rounded-lg pt-3 pl-3 pr-3 bg-herotitle ">
-      <h1 className="text-2xl font-semibold leading-none text-left tracking-tight">Loan Opportunities</h1>
-      <p className="pt-0 text-sm">comming soon</p>
+    <div className="  p-3">
+      <div className=" w-full  animate-pulse duration-400 flex justify-between ml-1 h-20  rounded-lg pt-3 pl-3 pr-3 bg-herotitle ">
+      <h1 className=" text-lg font-semibold leading-none text-left tracking-tight">Partners</h1>
+      <p className="pt-0 text-sm"></p>
       </div>
-
+      
       <div>
       <Swiper
       spaceBetween={2}
@@ -35,31 +42,31 @@ import 'swiper/css';
     >
       
       <SwiperSlide>
-      <Image className="" src={aavelogo} alt="image" width={50} height={2} />
+      <Image className=" rounded-full" src={aavelogo} alt="image" width={40} height={2} />
      </SwiperSlide>
      <SwiperSlide>
-      <Image className="" src={aavelogo} alt="image" width={50} height={2} />
+      <Image className="rounded-full" src={benddao} alt="image" width={40} height={2} />
      </SwiperSlide>
      <SwiperSlide>
-      <Image className="" src={aavelogo} alt="image" width={50} height={2} />
+      <Image className="rounded-full" src={blend} alt="image" width={40} height={2} />
      </SwiperSlide>
      <SwiperSlide>
-      <Image className="" src={aavelogo} alt="image" width={50} height={2} />
+      <Image className="rounded-full" src={nftfi} alt="image" width={40} height={2} />
      </SwiperSlide>
      <SwiperSlide>
-      <Image className="" src={aavelogo} alt="image" width={50} height={2} />
+      <Image className="rounded-full" src={benddao} alt="image" width={40} height={2} />
      </SwiperSlide>
      <SwiperSlide>
-      <Image className="" src={aavelogo} alt="image" width={50} height={2} />
+      <Image className="rounded-full" src={blend} alt="image" width={40} height={2} />
      </SwiperSlide>
      <SwiperSlide>
-      <Image className="" src={aavelogo} alt="image" width={50} height={2} />
+      <Image className="rounded-full" src={nftfi} alt="image" width={40} height={2} />
      </SwiperSlide>
      <SwiperSlide>
-      <Image className="" src={aavelogo} alt="image" width={50} height={2} />
+      <Image className="rounded-full" src={benddao} alt="image" width={40} height={2} />
      </SwiperSlide>
      <SwiperSlide>
-      <Image className="" src={aavelogo} alt="image" width={50} height={2} />
+      <Image className="rounded-full" src={blend} alt="image" width={40} height={2} />
      </SwiperSlide>
      
       

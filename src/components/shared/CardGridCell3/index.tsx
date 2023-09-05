@@ -1,15 +1,20 @@
 import React from 'react'
 import aavelogo from '../../../../public/aavelogo.png'
-import Image from 'next/image'
-
- const CardGridCell3 = () => {
+import Image, { StaticImageData } from 'next/image'
+ 
+interface ImageProps {
+  title: string;
+  value: string;
+  image: StaticImageData;
+}
+ const CardGridCell3 = ({ title, value, image }: ImageProps)  =>  {
   return (
-     <div className="animate-pulse duration-400 flex items-center justify-between bg-white rounded-lg p-5 border mt-2 ml-2 mr-2 ">
-            <span className="flex items-center">
-            <Image className="" src={aavelogo} alt="image" width={50} height={2} />
-            <h1 className="ml-5 ">Aave</h1>
+     <div className="animate-pulse duration-400 flex items-center justify-between bg-white rounded-lg p-3  border mt-2 ml-1 mr-0 ">
+            <span className="flex items-center ">
+            <Image className="" src={image} alt="image" width={40} height={2} />
+            <h1 className="ml-2 text-base">{title}</h1>
             </span>
-            <p>You don't use this protocol</p>
+            <p className=" text-xs text-gray-500">{value}</p>
         </div>
   )
 }

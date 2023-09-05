@@ -11,7 +11,7 @@ import FifthCell from '../FifthCell'
     <div className=" mt-5">
         <div className="">
              <div className=" md:grid grid-cols-1   lg:grid-cols-2 grid gap-5">
-        <div className=" w-full col-span-1 h-60 rounded-lg  border-2 border-white  text-center">
+        <div className=" w-full col-span-2 h-60 rounded-lg  border-2 border-white  text-center">
           <FirstCell/>
          </div>
         <div className="  w-full row-span-1 h-60  rounded-lg  border-2  border-white ">

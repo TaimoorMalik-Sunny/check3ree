@@ -10,6 +10,7 @@ const config: Config = {
 
   theme: {
     extend: {
+    
           colors:{
       primarywhite: "#ffece3",
       herotitle: "#F2F3F5",
