@@ -1,29 +1,22 @@
 import React from 'react'
-
-import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
+
 } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs"
-import CardGridCell3 from '@/components/shared/CardGridCell3'
+import CryptoProfileInfo from '@/components/shared/CryptoProfileInfo'
 import aavelogo from '../../../../public/aavelogo.png'
 import bendao from '../../../../public/benddao.jpeg'
 import blend from '../../../../public/blend.webp'
 import nftfi from '../../../../public/nftfi.png'
 
-export const HeroRHSDown = () => {
+export const NFTsCryptoCoins  = () => {
   return (
     
     <Tabs defaultValue="crypto coins" className=" w-full ">
@@ -44,10 +37,10 @@ export const HeroRHSDown = () => {
         </CardHeader> */}
         <CardContent className="space-y-2">
           <div className="space-y-1">
-          <CardGridCell3  image={aavelogo}  title={"Aave"} value={"$300"}/>
+          <CryptoProfileInfo  image={aavelogo}  title={"Aave"} value={"$300"}/>
           </div>
           <div className="space-y-1">
-          <CardGridCell3  image={bendao}  title={"bendao"} value={"$200"}/>
+          <CryptoProfileInfo  image={bendao}  title={"bendao"} value={"$200"}/>
           </div>
         </CardContent>
        
@@ -88,10 +81,10 @@ export const HeroRHSDown = () => {
         </CardHeader> */}
         <CardContent className="space-y-2">
           <div className="space-y-1">
-          <CardGridCell3 image={blend}  title={"blend"} value={"$100"}/>
+          <CryptoProfileInfo image={blend}  title={"blend"} value={"$100"}/>
           </div>
           <div className="space-y-1">
-          <CardGridCell3 image={nftfi}  title={"NFTFI"} value={"$300"}/>
+          <CryptoProfileInfo image={nftfi}  title={"NFTFI"} value={"$300"}/>
           </div>
         </CardContent>
       

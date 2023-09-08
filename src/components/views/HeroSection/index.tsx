@@ -1,51 +1,46 @@
 
 import React from 'react'
+import PreApprovals from '../PreApprovals'
 
-
-
-import ThirdCell from '../ThirdCell'
-import { Searchbar } from '@/components/shared/Search'
-import FirstCell from '../FirstCell'
-import SecondCell from '../SecondCell'
+import VERAFIScore from '../VERAFIScore'
+import CheckYourVERAFIReport from '../CheckYourVERAFIReport'
 import UserProfileInfo from '@/components/shared/UserProfileInfo'
-import { HeroRHSDown } from '../HeroRHSDown'
-import HeroRHS from '../HeroRHS'
+import { NFTsCryptoCoins } from '../NFTsCryptoCoins'
+import Partners from '../Partners'
+import CustomPreApproval from '../CustomPreApproval'
 
- const HeroTesting = () => {
+ const HeroSection= () => {
   return (
 
     <div className=" ">
     <div className="   grid grid-cols-2 md:grid-cols-4 gap-2 ">
       {/* User profile info  */}
     <div className=" w-full col-span-4 row-span-1  h-full rounded-lg  border-2 border-white  text-center">
-    <UserProfileInfo/>
-   
-     
-       </div>
-       {/* Search  */}
-     <div className=" flex items-center justify-center w-full col-span-1 row-span-2 h-full rounded-lg  border-2 border-white  text-center">
-   
-     <ThirdCell/>
+    <UserProfileInfo/></div>
+       {/* Pre Approvals */}
+     <div className="  w-full col-span-1 row-span-2 h-full rounded-lg  border-2 border-white  text-center">
+    <PreApprovals/>
     </div>
+    {/* VERAFI Score */}
     <div className=" flex   w-full col-span-2 row-span-2 h-full rounded-lg  border-2 border-white  text-center">
-     <FirstCell/>
+     <VERAFIScore/>
      </div>
-     
+     {/* Custom Pre Approval */}
      <div className=" w-full col-span-1 row-span-2 h-full rounded-lg  border-2 border-white  text-center">
-     <Searchbar/>
+     <CustomPreApproval/>
      </div>
-     {/* meter portion  */}
+     {/*Partners*/}
     
      <div className=" w-full col-span-1 row-span-1 h-full rounded-lg  border-2 border-white  text-center">
-     <HeroRHS/>
+     <Partners/>
      </div>
-    
-    
-     <div className=" w-full col-span-2 h-full rounded-lg  border-2 border-white  text-center">
-     <SecondCell/>
+     {/* Check your VERAFI Report */}
+      <div className=" w-full col-span-2 h-full rounded-lg  border-2 border-white  text-center">
+     <CheckYourVERAFIReport/>
      </div>
+     {/* NFTs Crypto Coins */}
      <div className=" w-full col-span-1 h-full rounded-lg  border-2 border-white  text-center">
-     <HeroRHSDown/>
+     <NFTsCryptoCoins/>
      </div>
     
      <div className=" w-full col-span-1 h-full rounded-lg  border-2 border-white  text-center">
@@ -60,4 +55,4 @@ import HeroRHS from '../HeroRHS'
 
   )
 }
-export default HeroTesting
+export default HeroSection

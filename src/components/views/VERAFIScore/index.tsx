@@ -13,7 +13,7 @@ import GaugeChart from 'react-gauge-chart'
   return calScore;
   
  }
- const FirstCell = () => {
+ const VERAFIScore = () => {
   return (
     <div className="flex  flex-col w-full items-center">
         <div className="flex">
@@ -47,7 +47,7 @@ import GaugeChart from 'react-gauge-chart'
   
  
 />
-<p className=" pr-2 text-2xl">Score 550</p>
+<p className="flex justify-center pr-2 text-2xl">Score 550</p>
 </span>
         </div>
       
@@ -55,4 +55,4 @@ import GaugeChart from 'react-gauge-chart'
   )
 }
 
-export default FirstCell
+export default VERAFIScore

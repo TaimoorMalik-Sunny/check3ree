@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/views/Navbar'
 import Footer from '@/components/views/Footter'
-import background from '../../public/gmain9.png'
+
 
 
 

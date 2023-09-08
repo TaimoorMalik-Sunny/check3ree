@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import React from 'react'
-import { BiSearch } from 'react-icons/bi';
-import SmallGridScore from '../SmallGridScore';
 import aavelogo from '../../../../public/aavelogo.png'
 import Image from 'next/image'
 import { VscRefresh } from 'react-icons/vsc';
@@ -30,7 +28,36 @@ import { VscRefresh } from 'react-icons/vsc';
       
               {/* hidden md:flex justify-center items-center */}
             <div className=" flex justify-center items-center">
-             <SmallGridScore/>
+            <div className="  invisible lg:visible grid-cols-4 grid-rows-2 grid  gap-1 ">
+        <div className=" w-28 h-5 rounded-lg  text-right">
+         <p className="text-gray-400">Active Since</p>
+         </div>
+        <div className="  w-20 h-5  rounded-lg text-right">
+          <p className="text-gray-400">Balance</p>
+           </div>
+           <div className="  w-20 h-5  rounded-lg text-right">
+          <p className="text-gray-400">NFTs</p>
+           </div>
+           <div className="  w-20 h-5  rounded-lg text-right">
+          <p className="text-gray-400">Crypto</p>
+           </div>
+       
+        <div className=" w-28 h-5 rounded-lg text-right">
+          <p className="text-gray-900 text-base">27 Oct 2023</p>
+        </div>
+        <div className="w-20 h-5 rounded-lg text-right">
+            <p className="text-gray-900 ">$144</p>
+          </div>
+          <div className="w-20 h-5 rounded-lg text-right">
+            <p className="text-gray-900 ">30</p>
+          </div>
+          <div className="w-20 h-5 rounded-lg text-right">
+            <p className="text-gray-900 ">20</p>
+          </div>
+          
+         
+
+      </div>
               <span className=" ml-14"><VscRefresh/></span>
            </div>
           

@@ -1,5 +1,4 @@
 import React from 'react'
-import aavelogo from '../../../../public/aavelogo.png'
 import Image, { StaticImageData } from 'next/image'
  
 interface ImageProps {
@@ -7,7 +6,7 @@ interface ImageProps {
   value: string;
   image: StaticImageData;
 }
- const CardGridCell3 = ({ title, value, image }: ImageProps)  =>  {
+ const CryptoProfileInfo = ({ title, value, image }: ImageProps)  =>  {
   return (
      <div className="animate-pulse duration-400 flex items-center justify-between bg-white rounded-lg p-3  border mt-2 ml-1 mr-0 ">
             <span className="flex items-center ">
@@ -19,4 +18,4 @@ interface ImageProps {
   )
 }
 
-export default CardGridCell3
+export default CryptoProfileInfo

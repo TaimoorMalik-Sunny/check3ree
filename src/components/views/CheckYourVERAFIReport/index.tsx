@@ -1,11 +1,11 @@
 import React from 'react'
 
- const Second = () => {
+ const CheckYourVERAFIReport = () => {
   return (
     <div  >
         <div className="flex flex-col items-center justify-center    md:mt-10 ">
            <div>
-            <h1 className=" pr-2 text-base lg:text-xl">Check your VERAFI Report</h1>
+            <h1 className=" pr-2 text-base lg:text-xl">Check Your VERAFI Report</h1>
             </div>
             <span className="mt-4">
              <div className=" lg:flex items-center">
@@ -20,4 +20,4 @@ import React from 'react'
     </div>
   )
 }
-export default Second
+export default CheckYourVERAFIReport
