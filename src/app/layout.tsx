@@ -1,4 +1,4 @@
-import Wrapper from '@/components/shared/Wrapper'
+import RootWrapper from '@/components/RootWrapper'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -32,9 +32,9 @@ export default function RootLayout({
           <body 
           className=" bg-[url('../../public/gmain13.png')] bg-cover bg-center bg-opacity-90 backdrop-blur-lg rounded drop-shadow-lg">
           <Navbar/>
-        <Wrapper>
+        <RootWrapper>
           {children}
-         </Wrapper>
+         </RootWrapper>
          <Footer/>
           
          

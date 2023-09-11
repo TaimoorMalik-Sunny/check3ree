@@ -3,7 +3,7 @@ import React from 'react'
  const CheckYourVERAFIReport = () => {
   return (
     <div  >
-        <div className="flex flex-col items-center justify-center    md:mt-10 ">
+        <div className=" blur-sm flex flex-col items-center justify-center    md:mt-10 ">
            <div>
             <h1 className=" pr-2 text-base lg:text-xl">Check Your VERAFI Report</h1>
             </div>
