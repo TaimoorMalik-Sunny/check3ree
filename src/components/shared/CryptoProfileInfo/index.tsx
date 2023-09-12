@@ -8,7 +8,7 @@ interface ImageProps {
 }
  const CryptoProfileInfo = ({ title, value, image }: ImageProps)  =>  {
   return (
-     <div className="animate-pulse duration-400 flex items-center justify-between bg-white rounded-lg p-3  border mt-2 ml-1 mr-0 ">
+     <div className=" flex items-center justify-between bg-white rounded-lg p-3  border mt-2 ml-1 mr-0 ">
             <span className="flex items-center ">
             <Image className="" src={image} alt="image" width={40} height={2} />
             <h1 className="ml-2 text-base">{title}</h1>

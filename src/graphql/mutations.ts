@@ -12,8 +12,10 @@ export const calcWalletAttributes = async ({ input }: MutationCalcWalletAttribut
                     createdAt
                 }
             }
-
+        
         `,
         variables: { input }
     })
 }
+
+

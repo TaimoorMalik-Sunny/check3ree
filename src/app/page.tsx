@@ -16,7 +16,7 @@ export default function Home() {
     
       <HeroSection/>
      
-
+     
      </motion.div> 
    
    </div>

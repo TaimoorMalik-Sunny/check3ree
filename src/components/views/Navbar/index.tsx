@@ -12,9 +12,23 @@ import {IoMdClose} from 'react-icons/io'
 import Dropdown from './Subcomponents/Dropdown'
 import Expand from './Subcomponents/Expand'
 import { NavbarArray, NavbarItemtypes } from '@/components/utils/NavbarArrayAndTypes'
+
+import { getWalletDetails } from '@/redux/features/wallet.slice';
+import { useAppDispatch, useAppSelector } from '@/redux/store'
  const index = () => {
     const [isNavbarOpen , setNavbarOpen] = useState<boolean>(false);
   const [cartItemNumber , setcartItemNumber] = useState<number>(2);
+
+
+    const dispatch = useAppDispatch();
+   const {userinfo ,address, balance, ageInDays } = useAppSelector(s => s.wallet);
+    
+    const handleGetWalletDetails = () => {
+      dispatch(getWalletDetails());
+      console.log(address)
+    }
+  
+    
   return (
 
         
@@ -23,6 +37,7 @@ import { NavbarArray, NavbarItemtypes } from '@/components/utils/NavbarArrayAndT
                <Image width={100} height={40} src={"/logo.png"} alt="logo" />
               <div className="flex-col">
               <p className="mt-3 mx-4">VERAFI</p>
+              {/* <p className="mt-3 mx-4">{address}</p> */}
               <p className=" text-end text-xs">Beta V0.3.0</p></div>
               </div>
               <div className="hidden lg:flex justify-between items-center grow-0 ">
@@ -38,9 +53,12 @@ import { NavbarArray, NavbarItemtypes } from '@/components/utils/NavbarArrayAndT
               </ul>
               </div>
               <div className="hidden lg:flex items-center">
+                
                  
-                 
-                  <button className="bg-blue-500 text-white rounded-lg  px-8 py-2">Connect Wallet</button>
+                  <button onClick={()=>{handleGetWalletDetails()}} className="bg-blue-500 text-white rounded-lg  px-8 py-2">
+                    Connect Wallet
+                    
+                    </button>
                  
               </div>
         

@@ -16,7 +16,9 @@ import bendao from '../../../../public/benddao.jpeg'
 import blend from '../../../../public/blend.webp'
 import nftfi from '../../../../public/nftfi.png'
 
+
 export const NFTsCryptoCoins  = () => {
+
   return (
     
     <Tabs defaultValue="crypto coins" className=" w-full ">

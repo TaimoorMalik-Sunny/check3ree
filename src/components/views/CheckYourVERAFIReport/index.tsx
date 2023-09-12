@@ -5,14 +5,14 @@ import React from 'react'
 const CheckYourVERAFIReport = () => {
   const dispatch = useAppDispatch();
   const { address, balance, ageInDays } = useAppSelector(s => s.wallet);
-
+  
   const handleGetWalletDetails = () => {
     dispatch(getWalletDetails());
   }
-
+  
   return (
     <div  >
-      <div className=" blur-sm flex flex-col items-center justify-center    md:mt-10 ">
+      <div className=" flex flex-col items-center justify-center    md:mt-10 ">
         <div>
           <h1 className=" pr-2 text-base lg:text-xl">Check Your VERAFI Report</h1>
         </div>

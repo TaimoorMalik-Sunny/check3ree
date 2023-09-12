@@ -5,7 +5,10 @@ import blend from '../../../../public/blend.webp'
 import CryptoProfileInfo from '@/components/shared/CryptoProfileInfo'
 
 
+
 export const PreApprovals = () => {
+  
+
   return (
     
     <div className="p-3 ">

@@ -1,17 +1,17 @@
-import { configureStore, combineReducers, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { configureStore, combineReducers} from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import counterReducer from './features/counter'
+
 import walletReducer from './features/wallet.slice'
 
 export const parentReducer = combineReducers({
-    counter: counterReducer,
-    wallet: walletReducer,
+   
+    wallet: walletReducer
 
 })
 
 const store = configureStore({
     reducer: parentReducer,
-    middleware: getDefaultMiddleware({ serializableCheck: false }),
+   
 })
 
 export default store;
