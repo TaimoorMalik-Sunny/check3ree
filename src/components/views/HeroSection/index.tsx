@@ -27,7 +27,7 @@ import { useAppSelector } from '@/redux/store'
     {calUserRep?<PreApprovals/>:<span className=' blur-sm'><PreApprovals/></span>}
     </div>
     {/* VERAFI Score */}
-    <div className=" flex   w-full col-span-2 row-span-2 h-full rounded-lg  border-2 border-white  text-center">
+    <div className=" flex   w-full justify-center col-span-2 row-span-2 h-full rounded-lg  border-2 border-white  text-center">
      <VERAFIScore/>
      </div>
      {/* Custom Pre Approval */}

@@ -3,11 +3,14 @@ import { AiOutlineExclamationCircle } from 'react-icons/ai'
 import nftfi from '../../../../public/nftfi.png'
 import blend from '../../../../public/blend.webp'
 import CryptoProfileInfo from '@/components/shared/CryptoProfileInfo'
+import { useAppSelector } from '@/redux/store'
 
 
 
 export const PreApprovals = () => {
-  
+   
+  const {preApprovalNftfi ,preApprovalBendDao } = useAppSelector(s => s.wallet);
+ 
 
   return (
     
@@ -19,10 +22,10 @@ export const PreApprovals = () => {
             </span>
         </div>
        
-            <CryptoProfileInfo image={blend}  title={"BendDAO"} value={"17 ETH"}/>
+            <CryptoProfileInfo image={blend}  title={"BendDAO"} value={preApprovalBendDao+"ETH"}/>
            
          
-            <CryptoProfileInfo image={nftfi}  title={"NFTFI"} value={"17 ETH"}/>
+            <CryptoProfileInfo image={nftfi}  title={"NFTFI"} value={preApprovalNftfi+"ETH"}/>
            
      {/* if user have not any coins  */}
         {/* <div className=" text-sm animate-pulse duration-400 p-5 border rounded-lg bg-white mt-2 ml-2 mr-2 mb-4 py-10">

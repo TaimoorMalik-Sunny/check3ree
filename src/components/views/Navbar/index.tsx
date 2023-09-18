@@ -13,20 +13,74 @@ import Dropdown from './Subcomponents/Dropdown'
 import Expand from './Subcomponents/Expand'
 import { NavbarArray, NavbarItemtypes } from '@/components/utils/NavbarArrayAndTypes'
 
-import { getWalletDetails } from '@/redux/features/wallet.slice';
+import { getWalletAttributes, setMyValue } from '@/redux/features/wallet.slice';
 import { useAppDispatch, useAppSelector } from '@/redux/store'
+import { Button } from '@/components/ui/button'
+import { calcCreditScore, calcPreApproval } from '@/redux/features/wallet.slice/asyncThunks'
+ 
+ 
+ 
  const index = () => {
+  const ethereum = (window as any).ethereum;
     const [isNavbarOpen , setNavbarOpen] = useState<boolean>(false);
-  const [cartItemNumber , setcartItemNumber] = useState<number>(2);
-
-
-    const dispatch = useAppDispatch();
-   const {userinfo ,address, balance, ageInDays } = useAppSelector(s => s.wallet);
+  const [cartItemNumber , setcartItemNumber] = useState<number>(2);  
+  const dispatch = useAppDispatch();
+   const {userinfo ,address ,attribute,score} = useAppSelector(s => s.wallet);
+   
+    console.log(attribute)
     
-    const handleGetWalletDetails = () => {
-      dispatch(getWalletDetails());
-      console.log(address)
+    const [connectionStatus, setConnectionStatus] = useState("");
+    const [etherValuestate, setEtherValuestate] = useState("");
+    
+    const handleConnectwallet = () => {
+      
+      
+    connectToWallet()
+      
+      console.log("call")
+      
+  
+    
     }
+    console.log(attribute?.["wallet_age_days_att_7"])
+    // wallet connectivity ftn
+    const connectToWallet = async () => {
+      if (ethereum) {
+        try {
+          // Requesting access to MetaMask wallet
+         const etherValue= await ethereum.request({ method: "eth_requestAccounts" }).
+         then((addr: string[])=>{
+          // setEtherValuestate(addr)
+          //  address && 
+          console.log(addr[0])
+          dispatch(setMyValue(addr[0])); ;
+
+          
+          dispatch(getWalletAttributes( { walletAddress:addr[0]}));
+          
+          //  address && 
+          dispatch(calcCreditScore({ walletAddress:addr[0]}))
+          
+          //  address && 
+          dispatch(calcPreApproval({ walletAddress:addr[0]}))
+         
+        
+         }
+         );
+       
+        
+          setConnectionStatus("Successfully Connected");
+          // state.address = etherValue
+          console.log(connectionStatus)
+        } catch (error) {
+          setConnectionStatus("Connection Failed");
+          console.error("MetaMask connection error:", error);
+        }
+      } else {
+        setConnectionStatus("MetaMask Not Detected");
+      }
+     
+    };
   
     
   return (
@@ -54,11 +108,12 @@ import { useAppDispatch, useAppSelector } from '@/redux/store'
               </div>
               <div className="hidden lg:flex items-center">
                 
-                 
-                  <button onClick={()=>{handleGetWalletDetails()}} className="bg-blue-500 text-white rounded-lg  px-8 py-2">
+               
+                 {userinfo?<Button onClick={()=>{handleConnectwallet()}} className="bg-blue-500 text-white rounded-lg  px-8 py-2">
+                     Wallet Connected
+                  </Button>:<Button onClick={()=>{handleConnectwallet()}} className="bg-blue-500 text-white rounded-lg  px-8 py-2">
                     Connect Wallet
-                    
-                    </button>
+                  </Button>}
                  
               </div>
         
@@ -169,3 +224,5 @@ const MobileNavbar = () => {
     
   )
 }
+
+

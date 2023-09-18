@@ -13,7 +13,7 @@ interface ImageProps {
             <Image className="" src={image} alt="image" width={40} height={2} />
             <h1 className="ml-2 text-base">{title}</h1>
             </span>
-            <p className=" text-xs text-gray-500">{value}</p>
+            <p className=" text-xs overflow-hidden overflow-ellipsis text-gray-500">{value}</p>
         </div>
   )
 }

@@ -5,8 +5,12 @@ import aavelogo from '../../../../public/aavelogo.png'
 import Image from 'next/image'
 import { VscRefresh } from 'react-icons/vsc';
 import { useAppDispatch, useAppSelector } from '@/redux/store';
-import { getWalletDetails } from '@/redux/features/wallet.slice';
+import { getWalletAttributes } from '@/redux/features/wallet.slice';
 import { Skeleton } from '@/components/ui/skeleton';
+
+
+
+
 
 
 
@@ -14,16 +18,17 @@ import { Skeleton } from '@/components/ui/skeleton';
 const UserProfileInfo = () => {
 
   const dispatch = useAppDispatch();
-const {userinfo ,address, balance, ageInDays } = useAppSelector(s => s.wallet);
+const {userinfo , attribute, score } = useAppSelector(s => s.wallet);
  
- const handleGetWalletDetails = () => {
-   dispatch(getWalletDetails());
-   console.log(userinfo)
-   
- }
+ 
+ console.log(userinfo)
+ console.log(attribute?.["wallet_balance_eth_att_1"])
+//  const activeSince = moment().subtract(attribute?.wallet_age_days_att_7, 'days').calendar();
   
   // const [userinfo ,setuserinfo] = useState<boolean>(false)
-  //  const { address, balance, ageInDays } = useAppSelector(a => a.wallet);
+  //  const { address, balance, ageInDays } = useAppSelector(a => a.wallet);'
+
+  
   return (
     
     <div className="  mt-0  flex items-center justify-between px-3 py-2 w-full h-24 border-2 border-white  rounded-lg ">
@@ -45,8 +50,9 @@ const {userinfo ,address, balance, ageInDays } = useAppSelector(s => s.wallet);
              <Image className="" src={aavelogo} alt="image" width={40} height={2} />
             <div className=" ml-16">
             <h1>adeelMalik.eth </h1>
-          
-            <p className=" text-gray-400">0x0fe9..23fA5f</p>
+            {/* <p className=" text-gray-400">0x0fe9..23fA5f</p> */}
+            <p className=" w-32 overflow-hidden overflow-ellipsis text-gray-400">{attribute?.wallet_address}</p>
+            
   
             </div>
              </div>:
@@ -76,37 +82,37 @@ const {userinfo ,address, balance, ageInDays } = useAppSelector(s => s.wallet);
             
             <div className=" flex justify-center items-center">
             {userinfo? 
-            <div className="  invisible lg:visible grid-cols-4 grid-rows-2 grid  gap-1 ">
-        <div className=" w-28 h-5 rounded-lg  text-right">
+            <div className="  invisible lg:visible grid-cols-4 grid-rows-2 grid  gap-x-6  gap-y-3">
+        <div className="  h-5 rounded-lg  text-right">
          <p className="text-gray-400">Active Since</p>
          </div>
-        <div className="  w-20 h-5  rounded-lg text-right">
+        <div className="   h-5  rounded-lg text-right">
           <p className="text-gray-400">Balance</p>
            </div>
-           <div className="  w-20 h-5  rounded-lg text-right">
+           <div className="   h-5  rounded-lg text-right">
           <p className="text-gray-400">NFTs</p>
            </div>
-           <div className="  w-20 h-5  rounded-lg text-right">
+           <div className="  h-5  rounded-lg text-right">
           <p className="text-gray-400">Crypto</p>
            </div>
        
-        <div className=" w-28 h-5 rounded-lg text-right">
+        <div className="  h-5 rounded-lg text-right">
           
           <p className="text-gray-900 text-base">27 Oct 2023</p>
           
         
         </div>
-        <div className="w-20 h-5 rounded-lg text-right">
+        <div className="h-5 rounded-lg text-right">
           
-           <p className="text-gray-900 ">$400</p>
+           <p className="text-gray-900 ">ETH:{attribute?.wallet_balance_eth_att_1}</p>
           
           </div>
-          <div className="w-20 h-5 rounded-lg text-right">
+          <div className=" h-5 rounded-lg text-right">
             <p className="text-gray-900 ">300</p>
             
           </div>
-          <div className="w-20 h-5 rounded-lg text-right">
-            <p className="text-gray-900 ">20</p>
+          <div className=" h-5 rounded-lg text-right">
+            <p className="text-gray-900 ">400</p>
             
           </div>
           
@@ -115,7 +121,7 @@ const {userinfo ,address, balance, ageInDays } = useAppSelector(s => s.wallet);
       </div>:""
          
         }
-              <span onClick={()=>{handleGetWalletDetails()}} className=" hover:rotate-180 ml-14"><VscRefresh/></span>
+              <span className=" hover:rotate-180 ml-14"><VscRefresh/></span>
               
            </div>
      </div>
@@ -123,3 +129,7 @@ const {userinfo ,address, balance, ageInDays } = useAppSelector(s => s.wallet);
 }
 
 export default UserProfileInfo;
+
+function moment() {
+  throw new Error('Function not implemented.');
+}

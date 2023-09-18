@@ -21,12 +21,40 @@ export enum BlockChainType {
   Ethereum = 'ETHEREUM'
 }
 
-export interface CalcWalletAttributesInput {
+export interface CalcCreditScoreInput {
+  walletAddress: Scalars['String'];
+}
+
+export interface CalcCreditScoreOutput {
+  __typename?: 'CalcCreditScoreOutput';
+  score: Scalars['Int'];
+}
+
+export interface CalcLaonSuccessProbabilityInput {
   appliedInterestRate: Scalars['Int'];
-  blockchainType: BlockChainType;
+  blockchainType?: InputMaybe<BlockChainType>;
   loanRequired_eth: Scalars['Float'];
   purpose?: InputMaybe<Scalars['String']>;
   repaymentDays: Scalars['Int'];
+  walletAddress: Scalars['String'];
+}
+
+export interface CalcLaonSuccessProbabilityOutput {
+  __typename?: 'CalcLaonSuccessProbabilityOutput';
+  probability: Scalars['Float'];
+}
+
+export interface CalcPreApprovalInput {
+  walletAddress: Scalars['String'];
+}
+
+export interface CalcPreApprovalOutput {
+  __typename?: 'CalcPreApprovalOutput';
+  preApprovalBendDao: Scalars['Float'];
+  preApprovalNftfi: Scalars['Float'];
+}
+
+export interface CalcWalletAttributesInput {
   walletAddress: Scalars['String'];
 }
 
@@ -36,7 +64,25 @@ export interface GetWalletAttributesInput {
 
 export interface Mutation {
   __typename?: 'Mutation';
+  calcCreditScore: CalcCreditScoreOutput;
+  calcLaonSuccessProbability: CalcLaonSuccessProbabilityOutput;
+  calcPreApproval: CalcPreApprovalOutput;
   calcWalletAttributes: WalletAttributes;
+}
+
+
+export interface MutationCalcCreditScoreArgs {
+  input: CalcCreditScoreInput;
+}
+
+
+export interface MutationCalcLaonSuccessProbabilityArgs {
+  input: CalcLaonSuccessProbabilityInput;
+}
+
+
+export interface MutationCalcPreApprovalArgs {
+  input: CalcPreApprovalInput;
 }
 
 
@@ -150,6 +196,12 @@ export type ResolversTypes = {
   AWSJSON: ResolverTypeWrapper<Scalars['AWSJSON']>;
   BlockChainType: BlockChainType;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
+  CalcCreditScoreInput: CalcCreditScoreInput;
+  CalcCreditScoreOutput: ResolverTypeWrapper<CalcCreditScoreOutput>;
+  CalcLaonSuccessProbabilityInput: CalcLaonSuccessProbabilityInput;
+  CalcLaonSuccessProbabilityOutput: ResolverTypeWrapper<CalcLaonSuccessProbabilityOutput>;
+  CalcPreApprovalInput: CalcPreApprovalInput;
+  CalcPreApprovalOutput: ResolverTypeWrapper<CalcPreApprovalOutput>;
   CalcWalletAttributesInput: CalcWalletAttributesInput;
   Float: ResolverTypeWrapper<Scalars['Float']>;
   GetWalletAttributesInput: GetWalletAttributesInput;
@@ -169,6 +221,12 @@ export type ResolversParentTypes = {
   AWSDateTime: Scalars['AWSDateTime'];
   AWSJSON: Scalars['AWSJSON'];
   Boolean: Scalars['Boolean'];
+  CalcCreditScoreInput: CalcCreditScoreInput;
+  CalcCreditScoreOutput: CalcCreditScoreOutput;
+  CalcLaonSuccessProbabilityInput: CalcLaonSuccessProbabilityInput;
+  CalcLaonSuccessProbabilityOutput: CalcLaonSuccessProbabilityOutput;
+  CalcPreApprovalInput: CalcPreApprovalInput;
+  CalcPreApprovalOutput: CalcPreApprovalOutput;
   CalcWalletAttributesInput: CalcWalletAttributesInput;
   Float: Scalars['Float'];
   GetWalletAttributesInput: GetWalletAttributesInput;
@@ -194,7 +252,26 @@ export interface AwsjsonScalarConfig extends GraphQLScalarTypeConfig<ResolversTy
   name: 'AWSJSON';
 }
 
+export type CalcCreditScoreOutputResolvers<ContextType = any, ParentType extends ResolversParentTypes['CalcCreditScoreOutput'] = ResolversParentTypes['CalcCreditScoreOutput']> = {
+  score?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type CalcLaonSuccessProbabilityOutputResolvers<ContextType = any, ParentType extends ResolversParentTypes['CalcLaonSuccessProbabilityOutput'] = ResolversParentTypes['CalcLaonSuccessProbabilityOutput']> = {
+  probability?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type CalcPreApprovalOutputResolvers<ContextType = any, ParentType extends ResolversParentTypes['CalcPreApprovalOutput'] = ResolversParentTypes['CalcPreApprovalOutput']> = {
+  preApprovalBendDao?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
+  preApprovalNftfi?: Resolver<ResolversTypes['Float'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
+  calcCreditScore?: Resolver<ResolversTypes['CalcCreditScoreOutput'], ParentType, ContextType, RequireFields<MutationCalcCreditScoreArgs, 'input'>>;
+  calcLaonSuccessProbability?: Resolver<ResolversTypes['CalcLaonSuccessProbabilityOutput'], ParentType, ContextType, RequireFields<MutationCalcLaonSuccessProbabilityArgs, 'input'>>;
+  calcPreApproval?: Resolver<ResolversTypes['CalcPreApprovalOutput'], ParentType, ContextType, RequireFields<MutationCalcPreApprovalArgs, 'input'>>;
   calcWalletAttributes?: Resolver<ResolversTypes['WalletAttributes'], ParentType, ContextType, RequireFields<MutationCalcWalletAttributesArgs, 'input'>>;
 };
 
@@ -219,6 +296,9 @@ export type Resolvers<ContextType = any> = {
   AWSDate?: GraphQLScalarType;
   AWSDateTime?: GraphQLScalarType;
   AWSJSON?: GraphQLScalarType;
+  CalcCreditScoreOutput?: CalcCreditScoreOutputResolvers<ContextType>;
+  CalcLaonSuccessProbabilityOutput?: CalcLaonSuccessProbabilityOutputResolvers<ContextType>;
+  CalcPreApprovalOutput?: CalcPreApprovalOutputResolvers<ContextType>;
   Mutation?: MutationResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
   Response?: ResponseResolvers<ContextType>;
