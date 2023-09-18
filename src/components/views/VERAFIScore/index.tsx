@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {AiOutlineExclamationCircle} from 'react-icons/ai'
 import GaugeChart from 'react-gauge-chart'
 import { useAppDispatch, useAppSelector } from '@/redux/store'
+import { Skeleton } from '@/components/ui/skeleton'
 
  
 
@@ -18,7 +19,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/store'
  const VERAFIScore = () => {
    
   
-  const {calUserRep,userinfo , score } = useAppSelector(s => s.wallet);
+  const {calUserRep,userinfo , score,fetchingStatus } = useAppSelector(s => s.wallet);
    
   
    const [userinfo1 ,setuserinfo1] = useState<boolean>(false)
@@ -50,10 +51,8 @@ import { useAppDispatch, useAppSelector } from '@/redux/store'
   percent={mertercalculation(score)}
   // percent={mertercalculation(metervalue)}
   // formatTextValue={(value)=> metervalue + ' score'}
-  
- 
-/>
-<p className="flex justify-center pr-2 text-2xl">Score {score}</p>
+  />
+<p className="flex justify-center pr-2 text-2xl">Score {fetchingStatus.calcCreditScore?<Skeleton className="h-4 w-[100px]" />:score}</p>
 </span>
         </div>:
         <div className="mt-5">
@@ -80,7 +79,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/store'
 
 
   {/* <button  className="bg-blue-500 text-white rounded-lg  px-8 py-2 ">Connect Wallet</button> */}
-
+  <p className="flex justify-center pr-2 text-2xl">Score 0</p>
 </span>
         </div>}
       

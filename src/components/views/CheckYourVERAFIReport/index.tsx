@@ -29,7 +29,7 @@ const CheckYourVERAFIReport = () => {
         const link = document.createElement('a');
         link.href = url;
         link.target = "_blank"
-        // link.setAttribute('download', `Transactions-Report.pdf`);
+        //link.setAttribute('download', `Transactions-Report.pdf`);
         document.body.appendChild(link);
         link.click();
 
