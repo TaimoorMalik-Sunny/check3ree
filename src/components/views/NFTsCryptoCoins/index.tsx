@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Card,
   CardContent,
@@ -17,21 +17,39 @@ import bendao from '../../../../public/benddao.jpeg'
 import blend from '../../../../public/blend.webp'
 import nftfi from '../../../../public/nftfi.png'
 import { alchemy } from '@/lib/alchemy';
+import { OwnedNft, OwnedToken } from 'alchemy-sdk';
+import { useAppSelector } from '@/redux/store';
 
+
+const defaultTokenImg = "https://icon-library.com/images/free-coin-icon/free-coin-icon-15.jpg"
 
 export const NFTsCryptoCoins = () => {
+  const [nfts, setNfts] = useState<OwnedNft[]>();
+  const [tokens, setTokens] = useState<OwnedToken[]>();
+  const walletAddress = useAppSelector(s => s.wallet.address);
+
+  const loadData = async (walletAddress: string) => {
+    // API for NFTs
+    // const data1 = await alchemy.nft.getNftsForOwner('0xD5aE740ED785Cf3Fa54A176eE855A721591343D4');
+    // console.log("alchemy.nft.getNftsForOwne", data1.ownedNfts)
+
+    // // API for tokens
+    // const data2 = await alchemy.core.getTokensForOwner("0xD5aE740ED785Cf3Fa54A176eE855A721591343D4");
+    // console.log("alchemy.core.getTokensForOwner", data2.tokens)
+
+    const [{ ownedNfts }, { tokens }] = await Promise.all([
+      alchemy.nft.getNftsForOwner(walletAddress),
+      alchemy.core.getTokensForOwner(walletAddress)
+    ]);
+
+    setNfts(ownedNfts);
+    setTokens(tokens);
+
+  }
 
   useEffect(() => {
-    (async () => {
-      // API for NFTs
-      const data1 = await alchemy.nft.getNftsForOwner('0xD5aE740ED785Cf3Fa54A176eE855A721591343D4');
-      console.log("alchemy.nft.getNftsForOwne", data1)
-
-      // API for tokens
-      const data2 = await alchemy.core.getTokensForOwner("0xD5aE740ED785Cf3Fa54A176eE855A721591343D4");
-      console.log("alchemy.core.getTokensForOwner", data2)
-    })()
-  }, [])
+    walletAddress && loadData("0xD5aE740ED785Cf3Fa54A176eE855A721591343D4");
+  }, [walletAddress])
 
 
   return (
@@ -53,12 +71,17 @@ export const NFTsCryptoCoins = () => {
          
         </CardHeader> */}
           <CardContent className="space-y-2">
-            <div className="space-y-1">
+            {/* <div className="space-y-1">
               <CryptoProfileInfo image={aavelogo} title={"Aave"} value={"$300"} />
-            </div>
-            <div className="space-y-1">
-              <CryptoProfileInfo image={bendao} title={"bendao"} value={"$200"} />
-            </div>
+            </div> */}
+
+            {
+              tokens?.map((token, idx) => {
+                return <div key={idx} className="space-y-1">
+                  <CryptoProfileInfo image={token.logo || defaultTokenImg} title={token.name || token.symbol || ""} value={token.balance || '0'} />
+                </div>
+              })
+            }
           </CardContent>
 
         </Card>
