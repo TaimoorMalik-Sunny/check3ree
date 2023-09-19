@@ -1,4 +1,5 @@
-import React from 'react'
+'use client';
+import React, { useEffect } from 'react'
 import {
   Card,
   CardContent,
@@ -15,40 +16,54 @@ import aavelogo from '../../../../public/aavelogo.png'
 import bendao from '../../../../public/benddao.jpeg'
 import blend from '../../../../public/blend.webp'
 import nftfi from '../../../../public/nftfi.png'
+import { alchemy } from '@/lib/alchemy';
 
 
-export const NFTsCryptoCoins  = () => {
+export const NFTsCryptoCoins = () => {
+
+  useEffect(() => {
+    (async () => {
+      // API for NFTs
+      const data1 = await alchemy.nft.getNftsForOwner('0xD5aE740ED785Cf3Fa54A176eE855A721591343D4');
+      console.log("alchemy.nft.getNftsForOwne", data1)
+
+      // API for tokens
+      const data2 = await alchemy.core.getTokensForOwner("0xD5aE740ED785Cf3Fa54A176eE855A721591343D4");
+      console.log("alchemy.core.getTokensForOwner", data2)
+    })()
+  }, [])
+
 
   return (
-    
+
     <Tabs defaultValue="crypto coins" className=" w-full ">
-    <TabsList className="grid w-full grid-cols-2">
-    <TabsTrigger value="NFTs">NFTs</TabsTrigger>
-      <TabsTrigger value="crypto coins">Crypto Coins</TabsTrigger>
-      {/* <TabsTrigger value="LiquidityPools">Liquidity Pools</TabsTrigger> */}
-    
-    </TabsList>
-    <TabsContent value="crypto coins">
-      <Card>
-        {/* <CardHeader className="flex flex-row justify-between">
+      <TabsList className="grid w-full grid-cols-2">
+        <TabsTrigger value="NFTs">NFTs</TabsTrigger>
+        <TabsTrigger value="crypto coins">Crypto Coins</TabsTrigger>
+        {/* <TabsTrigger value="LiquidityPools">Liquidity Pools</TabsTrigger> */}
+
+      </TabsList>
+      <TabsContent value="crypto coins">
+        <Card>
+          {/* <CardHeader className="flex flex-row justify-between">
           <CardTitle>Crypto Coins</CardTitle>
           <CardDescription>
             Total: $155.98
           </CardDescription>
          
         </CardHeader> */}
-        <CardContent className="space-y-2">
-          <div className="space-y-1">
-          <CryptoProfileInfo  image={aavelogo}  title={"Aave"} value={"$300"}/>
-          </div>
-          <div className="space-y-1">
-          <CryptoProfileInfo  image={bendao}  title={"bendao"} value={"$200"}/>
-          </div>
-        </CardContent>
-       
-      </Card>
-    </TabsContent>
-    {/* <TabsContent value="LiquidityPools">
+          <CardContent className="space-y-2">
+            <div className="space-y-1">
+              <CryptoProfileInfo image={aavelogo} title={"Aave"} value={"$300"} />
+            </div>
+            <div className="space-y-1">
+              <CryptoProfileInfo image={bendao} title={"bendao"} value={"$200"} />
+            </div>
+          </CardContent>
+
+        </Card>
+      </TabsContent>
+      {/* <TabsContent value="LiquidityPools">
       <Card>
         <CardHeader>
           <CardTitle>Liquidity Pools</CardTitle>
@@ -71,9 +86,9 @@ export const NFTsCryptoCoins  = () => {
         </CardFooter>
       </Card>
     </TabsContent> */}
-    <TabsContent value="NFTs">
-      <Card>
-        {/* <CardHeader className="flex flex-row justify-between">
+      <TabsContent value="NFTs">
+        <Card>
+          {/* <CardHeader className="flex flex-row justify-between">
             
           <CardTitle>NFTs Collection</CardTitle>
           <CardDescription>
@@ -81,17 +96,17 @@ export const NFTsCryptoCoins  = () => {
           </CardDescription>
          
         </CardHeader> */}
-        <CardContent className="space-y-2">
-          <div className="space-y-1">
-          <CryptoProfileInfo image={blend}  title={"blend"} value={"$100"}/>
-          </div>
-          <div className="space-y-1">
-          <CryptoProfileInfo image={nftfi}  title={"NFTFI"} value={"$300"}/>
-          </div>
-        </CardContent>
-      
-      </Card>
-    </TabsContent>
-  </Tabs>
+          <CardContent className="space-y-2">
+            <div className="space-y-1">
+              <CryptoProfileInfo image={blend} title={"blend"} value={"$100"} />
+            </div>
+            <div className="space-y-1">
+              <CryptoProfileInfo image={nftfi} title={"NFTFI"} value={"$300"} />
+            </div>
+          </CardContent>
+
+        </Card>
+      </TabsContent>
+    </Tabs>
   )
 }
